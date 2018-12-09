@@ -209,7 +209,7 @@
 			<div class="col-md-12 col-sm-12 col-xs-12 clean-section-header wow fadeInDown">
 				<h1><span class="clean-color-contras">Introduction </span></h1>
 				<div class="clean-line"></div>
-				<p class="col-md-8 col-sm-10 col-xs-12 col-md-offset-2 col-sm-offset-1">We create a tracking robot with Raspberry Pi that can track a moving and falling red balloon and move to pop the balloon before it lands. We implemented the color detection to recognize the balloon by OpenCV. PID algorithm could calculate the suitable parameters to control the tilt kit of camera by hardware PWM precisely and stably and the movement of wheels by DC controller. Besides, python multiprocessor modules are implemented to decrease the latency which allows us to simultaneously capture video, process the images and calculate the parameters of PID control and send the command to the motors. </p>
+				<p class="col-md-8 col-sm-10 col-xs-12 col-md-offset-2 col-sm-offset-1">Based on Raspberry Pi, we create a tracking robot that can track a falling red balloon and try to pop the balloon before it lands. In order to recognize the balloon, we implemented the color detection by OpenCV. The precise and stable locomotive of the robot, which includes camera tilt kit and two DC motors, has been controlled via PID algorithm. Besides, leveraging python’s multiprocessor modules tremendously decreases image processing latency in real-time. </p>
 			</div>
 			<!-- Section Header End -->
 
@@ -271,10 +271,9 @@
 			<div class="col-md-12 col-sm-12 col-xs-12 clean-section-header wow fadeInDown">
 			  <h1><span class="clean-color-contras">Design </span></h1>
 			  <div class="clean-line"></div>
-				<p class="col-md-8 col-sm-10 col-xs-12 col-md-offset-2 col-sm-offset-1">We only use one pi camera to detect objects and measure the distance between the object and the car. Our solution is to move the car according to the location of the balloon in the images and the criterion is to keep the balloon in the center of the images, which means the direction of moving car is in the line with that of the balloon. Additionally, the area of the balloon in the image can reflect the value of the distance between them. So it requires the accuracy of the recognition to the balloon. </p>
-
+				<p class="col-md-8 col-sm-10 col-xs-12 col-md-offset-2 col-sm-offset-1">Since we only have one Pi camera, we couldn’t measure the distance from the method of two camera. Our solution is to keep the balloon on the center of the image as possible. Therefore, the area would represent as the distance between the balloon and the robot. The Y axis differential would be the rotation error. And the X axis differential would be the tilt error. Consequently, our robot should require the accurate recognition on the balloon.  </p>				
 				<p class="col-md-8 col-sm-10 col-xs-12 col-md-offset-2 col-sm-offset-1">
-				In order to accomplish the project better, the best approach was to divide it into various smaller parts individually and combine them at the end. The main task is hardware and software part, which are tackled different task as following introduction.</p>
+				To accomplish the project, we have divided it into several smaller tasks and combine them in the end. In general, there are two parts which are hardware and software. And they have different tasks to be tackled in the following introduction.</p>
 			</div>
 			<!-- Section Header End -->
 
