@@ -259,7 +259,7 @@
 
 
 <!-- ===================================
-	FEATURED WORK SECTION -- Design SEction
+	FEATURED WORK SECTION -- Design Section
 ==================================== -->
 <section id="featured-works" class="clean-section-wrapper">
 	<!-- Container -->
@@ -289,9 +289,9 @@
 		<div class="row">
 			<!-- Section Header -->
 			<div class="col-md-12 col-sm-12 col-xs-12 clean-section-header wow fadeInDown">
-				<h1><span class="clean-color-contras">HardWare Part</span></h1>
+				<h1><span class="clean-color-contras">Hardware Part</span></h1>
 				<div class="clean-line"></div>
-				<p class="col-md-8 col-sm-10 col-xs-12 col-md-offset-2 col-sm-offset-1">`Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat at, totam, nam aspernatur voluptatum nostrum officiis deserunt nisi quibusdam ipsam?</p>
+				<p class="col-md-8 col-sm-10 col-xs-12 col-md-offset-2 col-sm-offset-1">`The body of the car. </p>
 			</div>
 			<!-- Section Header End -->
 
@@ -319,19 +319,41 @@
 		<div class="row">
 			<!-- Section Header -->
 			<div class="col-md-12 col-sm-12 col-xs-12 clean-section-header wow fadeInDown">
-				<h1><span class="clean-color-contras">SoftWare Part</span></h1>
+				<h1><span class="clean-color-contras">Software Part</span></h1>
 				<div class="clean-line"></div>
-				<p class="col-md-8 col-sm-10 col-xs-12 col-md-offset-2 col-sm-offset-1">`Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat at, totam, nam aspernatur voluptatum nostrum officiis deserunt nisi quibusdam ipsam?</p>
+				<p class="col-md-8 col-sm-10 col-xs-12 col-md-offset-2 col-sm-offset-1">The organ of the car. </p>
 			</div>
 			<!-- Section Header End -->
-<!--
-			<div class="col-md-6 col-sm-6 col-xs-12 clean-custom-sec-img wow bounceInLeft">
-				<img src="images/custom.jpg" alt="Custom Image">
-			</div>
--->
+
 			<div class="col-md-6 col-sm-6 col-xs-12 clean-custom-sec-text wow bounceInRight">
 				<h3>1.Object Recognition Algorithm</h3>
 				<p>Our object recognition algorithm could detect the red objects videoed by the Pi camera and calculate the center position. The usage of the OpenCV library makes the algorithm easy to implement. First of all, we install the openCV library into our Raspberry Pi. There are some ways to install the openCV library. The easiest and direct method is to run the command “sudo apt-get install libopencv-dev python-opencv” in the command prompt, which can help us to save several hours to compile the openCV. The version of our installed openCV is 这个需要去查一下。 After installing the openCV successfully, we need to assemble the Pi camera onto the R-Pi and set it up in configuration of R-Pi. As for the design of the recognition algorithm, it can be broken up into following parts. </p>
+				
+				<p>
+				<ol><li>
+					Create a video capture object of openCV which can take picture at real time by running “cv2.VideoCapture(0)” and when using “cap.read()”, it will return 640*480*3 picture array, which is the default resolution and can fit our requirement of recognition. Three channels is (R, G, B) color space. 
+					</li>
+					
+					<li>
+					Run “cv2.cvtColor(frame, cv2.COLOR_RGB2HSV)” can convert the image from RGB color space to HSV (hue, Saturation, Value) color space. We can benefit from this conversion because we need to threshold the HSV image to get the binary image which only keep the red balloon part by setting the low_red and upper_red threshold and it is convenient and easy for us to adjust the threshold in HSV color space. 
+					</li>
+					
+					<li>
+					We set the lower_red is (156, 100, 40) and the upper_red is (180, 255, 255). Use the syntax of “maks = cv2.inRange(hsv, low_red, upper_red)” to do threshold. It will make the pixel values that are less than lower_red and more than upper_red equal to zero and the pixel values that are in between them equal to 255. 
+					</li>
+					
+					<li>
+					We also use the techniques of computer vision to process the binary images including do “cv2.morphologyEx” of open and close to filter the background noise and make the boundary of binary image smooth and clear.
+					</li>
+					
+					<li>Run “cv2.findContours(mask,cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_NONE)” to do the most important thing which is extract the boundary of the object. If it detects the boundary, it will return a list that contains several calculated contours although most of them are zero. If it does not, it will return a empty list. 
+					</li>
+					
+					<li>
+					We need to pick up the longest contour from returned contour list. The method we used is to calculate the area of every contour and find the maximum value that is what we want. Then, calculate the spatial moment that can compute the center position of the object and the area of the objects.
+					</li>
+				</ol>			
+				</p>
 			</div>
 			
 			<div class="col-md-6 col-sm-6 col-xs-12 clean-custom-sec-text wow bounceInRight">
@@ -342,7 +364,7 @@
 			<div class="col-md-6 col-sm-6 col-xs-12 clean-custom-sec-text wow bounceInRight">
 				<h3>3. Multiprocessing Algorithm:</h3>
 				<p>To achieve our goal of tracking a falliing and moving balloon and pop it, we must decrease the latency and running time of every part as far as possible. At the beginning, the recognition and the course of sending order to control the motors and servo took about 105ms, which means it only processed less than ten pictures every second and it is far away from what we should do since we need to track the moving object and we only have limited time to decide the car’s movement. This delay time is too long. To reduce the delay time, one solution is to parallel process different task because of four cores in R-Pi, we can assign four jobs into four cores. In python, we could use the multiprocessing library to fully take advantage of four cores of R-Pi. </p>
-				<p>
+				<p><ol>
 					<li>The first core is used to focus on capturing the video and put the image it reads into the “send_frame_queue”, whose minimum running time is 33 ms because the frequency of the Pi camera taking video is 30 fps. </li>
 					
 					<li>The second core is used to get the frame of images from send_frame_queue and process the images and extract the contours. Then put the contours into receive_contour_queue, which takes about 10 ms at most.
@@ -355,6 +377,7 @@
 					<li>
 					The forth core can get the parameters to control the tilt kit from send_motor_queue and realize prediction function to ensure the smooth movement of tilt kit , whose maximum running time is 25 ms. 
 					</li>
+				</ol>
 				</p>
 				
 				<p>This describes the tasks that every core executes and the time they spend. The longest time is up to the frequency of the Pi camera, which is unchangeable to some degree. So this multiprocessing system has optimized the entire program and decrease the running time every loop from 105 ms to 34 ms. Note that the “print” syntax will cause the delay and if wanting show the image onto the monitors, it will increase delay time. </p>
@@ -368,133 +391,29 @@
 			<div class="col-md-6 col-sm-6 col-xs-12 clean-custom-sec-text wow bounceInRight">
 				<h3>5.Pygame interface </h3>
 				<p>There are three modes in tracking robotic car. We use pygame library to implement visual interface to control them as the following picture shown. </p>
-				<p>The first mode is calibration mode, which is to find the balloon at the beginning in case the person who toss the balloon standing behind the car and it will not see the balloon. </p>
-				<p>The second mode is play mode, which is main program to realize our function. When a person toss a red balloon, the car will track the balloon until it explodes the balloon. </p>
-				<p>The third mode is celebration mode, which makes the car turn around and move forward and backward like a puppy. </p>
+				<p>
+					<li>
+					The first mode is calibration mode, which is to find the balloon at the beginning in case the person who toss the balloon standing behind the car and it will not see the balloon.
+					</li> 
+					
+					<li>
+					The second mode is play mode, which is main program to realize our function. When a person toss a red balloon, the car will track the balloon until it explodes the balloon. 					
+					</li>
+					
+					<li>
+					The third mode is celebration mode, which makes the car turn around and move forward and backward like a puppy. 
+					</li>
+				
+				</p>
 			</div>
 			
 		</div>
 	</div>
 </section>
-	
-	<!-- Featured Works Slider -->
-	<!--
-	<div class="container-fluid">
-		<div class="row-fluid">
-
-			<div class="clean-portfolio-work-slider-section wow fadeIn" data-wow-duration="2s">
-				<div id="featured-work-slider" class="owl-carousel clean-portfolio-works-slider">
-
-					<!-- Work 1 -->
-	<!--
-					<div class="clean-portfolio-work-item">
-
-						<img src="images/featured-work/1.png" alt="Feature Work 1">
-						<div class="clean-port-work-details">
-							<ul class="clean-work-meta">
-								<li class="clean-lighbox"><a href="images/featured-work/1.png" class="clean-featured-work-img"><i class="fa fa-cog"></i></a></li>
-							</ul>
-						</div>
-
-					</div>
-					<!-- Work 1 End -->
-
-					<!-- Work 2 -->
-	<!--
-					<div class="clean-portfolio-work-item">
-
-						<img src="images/featured-work/2.png" alt="Feature Work 2">
-						<div class="clean-port-work-details">
-							<ul class="clean-work-meta">
-								<li class="clean-lighbox"><a href="images/featured-work/2.png" class="clean-featured-work-img"><i class="fa fa-cog"></i></a></li>
-							</ul>
-						</div>
-
-					</div>
-					<!-- Work 2 End -->
-
-					<!-- Work 3 -->
-	<!--
-					<div class="clean-portfolio-work-item">
-
-						<img src="images/featured-work/3.png" alt="Feature Work 3">
-						<div class="clean-port-work-details">
-							<ul class="clean-work-meta">
-								<li class="clean-lighbox"><a href="images/featured-work/3.png" class="clean-featured-work-img"><i class="fa fa-cog"></i></a></li>
-							</ul>
-						</div>
-
-					</div>
-					<!-- Work 3 End -->
-
-					<!-- Work 4 -->
-	<!--
-					<div class="clean-portfolio-work-item">
-
-						<img src="images/featured-work/4.png" alt="Feature Work 4">
-						<div class="clean-port-work-details">
-							<ul class="clean-work-meta">
-								<li class="clean-lighbox"><a href="images/featured-work/4.png" class="clean-featured-work-img"><i class="fa fa-cog"></i></a></li>
-							</ul>
-						</div>
-
-					</div>
-					<!-- Work 4 End -->
-
-					<!-- Work 5 -->
-	<!--
-					<div class="clean-portfolio-work-item">
-
-						<img src="images/featured-work/5.png" alt="Feature Work 5">
-						<div class="clean-port-work-details">
-							<ul class="clean-work-meta">
-								<li class="clean-lighbox"><a href="images/featured-work/5.png" class="clean-featured-work-img"><i class="fa fa-cog"></i></a></li>
-							</ul>
-						</div>
-
-					</div>
-					<!-- Work 5 End -->
-
-					<!-- Work 6 -->
-	<!--
-					<div class="clean-portfolio-work-item">
-
-						<img src="images/featured-work/6.png" alt="Feature Work 6">
-						<div class="clean-port-work-details">
-							<ul class="clean-work-meta">
-								<li class="clean-lighbox"><a href="images/featured-work/6.png" class="clean-featured-work-img"><i class="fa fa-cog"></i></a></li>
-							</ul>
-						</div>
-
-					</div>
-					<!-- Work 6 End -->
-
-					<!-- Work 7 -->
-	<!--
-					<div class="clean-portfolio-work-item">
-
-						<img src="images/featured-work/7.png" alt="Feature Work 7">
-						<div class="clean-port-work-details">
-							<ul class="clean-work-meta">
-								<li class="clean-lighbox"><a href="images/featured-work/7.png" class="clean-featured-work-img"><i class="fa fa-cog"></i></a></li>
-							</ul>
-						</div>
-
-					</div>
-					<!-- Work 7 End -->
-	<!--
-
-				</div>
-			</div>
-		</div>
-	</div> 
-	<!-- Featured Works Slider -->
-
-</section>
 
 
 <!-- ===================================
-	OFFER SECTION
+	OFFER SECTION ---Testing and issues
 ==================================== -->
 <section id="offer" class="clean-section-wrapper clean-offer-section  background-two">
 	<div class="container">
@@ -503,8 +422,66 @@
 			<!-- Section Header -->
 			<div class="col-md-12 col-sm-12 col-xs-12 clean-section-header wow fadeInDown">
 				<h1><span class="clean-color-contras">Testing and Issues</span></h1>
-				<div class="clean-line"></div>
-				<p class="col-md-8 col-sm-10 col-xs-12 col-md-offset-2 col-sm-offset-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus tempore voluptatem dolor cum autem qui maiores esse sit, vel voluptate.</p>
+			</div>
+			
+				
+				<div class="col-md-6 col-sm-6 col-xs-12 clean-custom-sec-text wow bounceInRight">
+				<h3>1. C++ OpenCV install Issue</h3>
+				<p>
+				Since our robotic car need to track the falling balloon and move to the landing location very fast and considering that python is a kind of interpreted programming language and C++ is a complied programming language, we initially planned to install C++ version of openCV. We tried to install the C++ OpenCV library several times and every time it took more than three hours to compile it. We finally installed the C++ openCV successfully but when we tried to run some codes, it failed and said that it cannot open the Pi camera, which took us about one week. After discussion with Professor Skovira, we decide to use python openCV first and see whether it can meet our requirement. But we will still introduce how to install C++ openCV here briefly. 
+				<ol>
+					<li>
+						First of all, we need to install several required packages that we have not installed before such as CMake 2,8,7 or higher, Git, GCC and GTK+2.x or higher, including headers (libgtk2.0-dev). These packages can be installed in a terminal directly. 
+					</li>
+
+					<li>
+					Secondly, OpenCV Source Code is needed which can download from the Git Repository by the command “cd ~/[my_working_directory] git clone https://github.com/opencv/opencv.git git clone https://github.com/opencv/opencv_contrib.git”
+					</li>
+
+					<li>
+					Thirdly, Building OpenCV from Source using CMake.
+						<ol>
+							<li>
+							Create a temporary directory, where we want to put the generated Makefiles, project files as well as output file and enter there.
+							</li>
+
+							<li>
+							Configure it by running “cmake -D CMAKE_BUILD_TYPE=Release -D CMAKE_INSTALL_PREFIX=/usr/local ..”, which will take more than ten minutes.
+							</li>
+
+							<li>
+							After finishing this, we need to describe some parameters or during the process of compiling, there will be some errors. 
+							</li>
+
+							<li>
+							From build directory execute “make -j7 # runs 7 jobs in parallel”.
+							</li>
+
+							<li>
+							Install the library by execute “sudo make install” form build directory. 
+							</li>			
+						</ol>
+					</li>
+					</ol>
+					</p>
+				<p>
+					It should work, but there will definitely be a lot of errors. Good Luck!
+				</p>
+			</div>
+				
+			<div class="col-md-6 col-sm-6 col-xs-12 clean-custom-sec-text wow bounceInRight">
+				<h3>2.Pi camera setting issue</h3>
+				<p>After python OpenCV library installed, we tried to run testing code, there is one error saying “OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /build/opencv-U1UwfN/opencv-2.4.9.1+dfsq1/modules/imgproc/src/color.cpp, line 3737”. We searched it on Google, this error can be fixed by running “sudo modprobe bcm2835-v4l2“, which is used to intall the v412 driver on the bcm2835. We thought it is one time install but when the R-Pi reboot, the same error appeared again. Therefore, we add this command into /etc/modules. Then, it can work smoothly.</p>
+			</div>
+			
+			<div class="col-md-6 col-sm-6 col-xs-12 clean-custom-sec-text wow bounceInRight">
+				<h3>3. Hardware PWM issue</h3>
+				<p>To control the servo of pan tilt kit, under the recommendation of Professor Skovira, we use the hardware PWM to generate control signal instead of software PWM, this is because the signal generated by hardware PWM is stable and less noise in a R-Pi multiprocessing environment. When we following the instruction of the professor to build the hardware PWM file and connect the circuit, we cannot send any signal to the GPIO pin. After asking other students who have experience to implement the hardware PWM, we know some very significant points. One is only GPIO pin 12 and pin 13 can be used to generated hardware PWM signal. Another is before running the code, we need to run “sudo pigpiod” to launch the pigpio library as a daemon. </p>
+			</div>
+			
+			<div class="col-md-6 col-sm-6 col-xs-12 clean-custom-sec-text wow bounceInRight">
+				<h3>4. DC controller Issure</h3>
+				<p>Because of tracking and chasing the falling balloon, we need to faster motors to drive the robotic car and thus, with the help of the professor Skovira, we decide to use the DC motor to drive and buy DC controller to control two DC motor to move. It works well but we found that once we add the controller program into multiprocessing, the whole program will be stuck and the queue will keep a lot of unprocessed data. After we monitored the running time of every core, we noticed that the every running time of the third core which is used to process the PID control algorithm and send order to DC controller is far longer than others and the average running time is 202 ms. At first, we thought this could be the problem of the hardware because of the delay of opening motors or the bad connection of circuit to make the transmitting slow. But when we check everything about the circuit, there is no bad connection. So we searched the software stuff. We found there is a syntax about “time.sleep(0.2)” in the library that is used to control the DC controller and this is probably the reason why it runs so slowly. So we changed the source of the library and compile it again. It worked, the running time of the third core decreased to 22 ms. </p>
 			</div>
 			<!-- Section Header End -->
 
@@ -531,53 +508,6 @@
 					</div>
 
 				</div>
-
-				<div class="col-md-4 col-sm-4 col-xs-12 wow fadeInUp" data-wow-duration="1s">
-
-					<div class="clean-blurb-icon-only">
-						<i class="fa fa-laptop"></i>
-						<h3>RESPONSIVE</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi tempora quis numquam odio. Asperiores perspiciatis maiores voluptas, velit similique placeat.</p>
-					</div>
-
-					<div class="clean-blurb-icon-only">
-						<i class="fa fa-cog"></i>
-						<h3>EASY TO EDIT</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi tempora quis numquam odio. Asperiores perspiciatis maiores voluptas, velit similique placeat.</p>
-					</div>
-
-					<div class="clean-blurb-icon-only">
-						<i class="fa fa-star"></i>
-						<h3>FONT AWESOME</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi tempora quis numquam odio. Asperiores perspiciatis maiores voluptas, velit similique placeat.</p>
-					</div>
-
-				</div>
-
-				<div class="col-md-4 col-sm-4 col-xs-12 wow bounceInRight">
-
-					<div class="clean-blurb-icon-only">
-						<i class="fa fa-support"></i>
-						<h3>FREE SUPPORT</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi tempora quis numquam odio. Asperiores perspiciatis maiores voluptas, velit similique placeat.</p>
-					</div>
-
-					<div class="clean-blurb-icon-only">
-						<i class="fa fa-arrow-up"></i>
-						<h3>FREE UPDATE</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi tempora quis numquam odio. Asperiores perspiciatis maiores voluptas, velit similique placeat.</p>
-					</div>
-
-					<div class="clean-blurb-icon-only">
-						<i class="fa fa-play"></i>
-						<h3>AND MORE</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi tempora quis numquam odio. Asperiores perspiciatis maiores voluptas, velit similique placeat.</p>
-					</div>
-
-				</div>
-				<!-- Services End -->
-
-			</div>
 		</div>
 	</div>
 </section>
