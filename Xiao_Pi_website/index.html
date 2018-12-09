@@ -423,8 +423,17 @@
 			<div class="col-md-12 col-sm-12 col-xs-12 clean-section-header wow fadeInDown">
 				<h1><span class="clean-color-contras">Testing and Issues</span></h1>
 			</div>
+		</div>
+	</div>
+</section>
+		<!-- Section Header End -->		
 			
-				
+<!-- ===================================
+	SCREENSHOOT --- hardware part
+==================================== -->
+<section class="clean-custom-sec clean-section-wrapper background-two">
+	<div class="container">
+		<div class="row">
 				<div class="col-md-6 col-sm-6 col-xs-12 clean-custom-sec-text wow bounceInRight">
 				<h3>1. C++ OpenCV install Issue</h3>
 				<p>
@@ -482,32 +491,7 @@
 			<div class="col-md-6 col-sm-6 col-xs-12 clean-custom-sec-text wow bounceInRight">
 				<h3>4. DC controller Issure</h3>
 				<p>Because of tracking and chasing the falling balloon, we need to faster motors to drive the robotic car and thus, with the help of the professor Skovira, we decide to use the DC motor to drive and buy DC controller to control two DC motor to move. It works well but we found that once we add the controller program into multiprocessing, the whole program will be stuck and the queue will keep a lot of unprocessed data. After we monitored the running time of every core, we noticed that the every running time of the third core which is used to process the PID control algorithm and send order to DC controller is far longer than others and the average running time is 202 ms. At first, we thought this could be the problem of the hardware because of the delay of opening motors or the bad connection of circuit to make the transmitting slow. But when we check everything about the circuit, there is no bad connection. So we searched the software stuff. We found there is a syntax about “time.sleep(0.2)” in the library that is used to control the DC controller and this is probably the reason why it runs so slowly. So we changed the source of the library and compile it again. It worked, the running time of the third core decreased to 22 ms. </p>
-			</div>
-			<!-- Section Header End -->
-
-			<!-- Services -->
-			<div class="clean-service-wrapper">
-				<div class="col-md-4 col-sm-4 col-xs-12 wow bounceInLeft">
-
-					<div class="clean-blurb-icon-only">
-						<i class="fa fa-html5"></i>
-						<h3>HTML5</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi tempora quis numquam odio. Asperiores perspiciatis maiores voluptas, velit similique placeat.</p>
-					</div>
-
-					<div class="clean-blurb-icon-only">
-						<i class="fa fa-css3"></i>
-						<h3>CSS3</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi tempora quis numquam odio. Asperiores perspiciatis maiores voluptas, velit similique placeat.</p>
-					</div>
-
-					<div class="clean-blurb-icon-only">
-						<i class="fa fa-jsfiddle"></i>
-						<h3>CLEAN CODE</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi tempora quis numquam odio. Asperiores perspiciatis maiores voluptas, velit similique placeat.</p>
-					</div>
-
-				</div>
+			</div>		
 		</div>
 	</div>
 </section>
