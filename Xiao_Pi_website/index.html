@@ -88,7 +88,9 @@
 				</button>
 
 				<!-- Logo -->
+				<!-- comment the logo -->
 				<a class="navbar-brand" href="index.html"><img class="logo" id="logo" src="images/logo.png" alt="Page"></a>
+				
 
 			</div>
 			<!-- Navbar Toggle End -->
@@ -98,6 +100,9 @@
 				<ul class="nav navbar-nav clean-menu-wrapper">
 					<li class="active">
 						<a href="#clean-slider">Home</a>
+					</li>
+					<li>
+						<a href="#objective">Objective</a>
 					</li>
 					<li>
 						<a href="#about">Introduction</a>
@@ -168,9 +173,32 @@
 	</div>
 </section>
 
-
+	
 <!-- ===================================
-	ABOUT SECTION
+	OBJECTIVE SECTION
+==================================== -->
+<section id="objective" class="clean-section-wrapper background-one">
+	<div class="container">
+		<div class="row">
+
+			<!-- Section Header -->
+			<div class="col-md-12 col-sm-12 col-xs-12 clean-section-header wow fadeInDown">
+				<h1><span class="clean-color-contras">Objective </span></h1>
+				<div class="clean-line"></div>
+				<p class="col-md-8 col-sm-10 col-xs-12 col-md-offset-2 col-sm-offset-1">For ECE 5725 Design with Embedded Operating System final project, we use a Raspberry Pi to control a robotic car to autonomously track a falling red balloon and follow it until popping the balloon. The camera can move up and down by tilt kit and the wheel could move around in the ground. Our car can also be remotely controlled by pygame interface in computer connecting with it in different modes.  </p>
+			</div>
+			<!-- Section Header End -->
+
+		</div>
+	</div>
+</section>
+	
+	
+	
+	
+	
+<!-- ===================================
+	ABOUT SECTION -- Introduction section
 ==================================== -->
 <section id="about" class="clean-section-wrapper background-one">
 	<div class="container">
@@ -191,32 +219,32 @@
 					<div class="clean-icon">
 						<i class="fa fa-html5"></i>
 					</div>
-					<h3>HTML TEMPLATE</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id voluptatibus placeat vel minima quia earum eaque repellendus odio beatae suscipit.</p>
+					<h3>Pi Camera</h3>
+					<p>Object Recognition</p>
 				</div>
 
 				<div class="col-md-3 col-sm-3 col-xs-12 clean-blurb-round-icon wow bounceIn" data-wow-delay=".5s">
 					<div class="clean-icon">
 						<i class="fa fa-css3"></i>
 					</div>
-					<h3>CSS3</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, nostrum animi est error facere ipsum laboriosam, rem modi totam earum.</p>
+					<h3>Tilt kit</h3>
+					<p>Haedware PWM</p>
 				</div>
 
 				<div class="col-md-3 col-sm-3 col-xs-12 clean-blurb-round-icon wow bounceIn" data-wow-delay=".5s">
 					<div class="clean-icon">
 						<i class="fa fa-laptop"></i>
 					</div>
-					<h3>Responsive TEMPLATE</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae laudantium, aperiam! Impedit nam atque reiciendis itaque, ab in vitae sit.</p>
+					<h3>DC motor controller</h3>
+					<p>wheels</p>
 				</div>
 
 				<div class="col-md-3 col-sm-3 col-xs-12 clean-blurb-round-icon wow bounceInRight" data-wow-delay=".5s">
 					<div class="clean-icon">
 						<i class="fa fa-support"></i>
 					</div>
-					<h3>FREE SUPPORT</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur libero vel deserunt nulla voluptatibus consequuntur adipisci quae. Facere, vero!.</p>
+					<h3>Multiprocessing</h3>
+					<p>Decrease latency.</p>
 				</div>
 
 			</div>
@@ -228,15 +256,40 @@
 
 
 
+
+
 <!-- ===================================
-	SCREENSHOOT
+	FEATURED WORK SECTION -- Design SEction
+==================================== -->
+<section id="featured-works" class="clean-section-wrapper">
+	<!-- Container -->
+	<div class="container">
+		<div class="row">
+
+			<!-- Section Header -->
+			<div class="col-md-12 col-sm-12 col-xs-12 clean-section-header wow fadeInDown">
+			  <h1><span class="clean-color-contras">Design </span></h1>
+			  <div class="clean-line"></div>
+				<p class="col-md-8 col-sm-10 col-xs-12 col-md-offset-2 col-sm-offset-1">We only use one pi camera to detect objects and measure the distance between the object and the car. Our solution is to move the car according to the location of the balloon in the images and the criterion is to keep the balloon in the center of the images, which means the direction of moving car is in the line with that of the balloon. Additionally, the area of the balloon in the image can reflect the value of the distance between them. So it requires the accuracy of the recognition to the balloon. </p>
+				
+				<p class="col-md-8 col-sm-10 col-xs-12 col-md-offset-2 col-sm-offset-1">
+				In order to accomplish the project better, the best approach was to divide it into various smaller parts individually and combine them at the end. The main task is hardware and software part, which are tackled different task as following introduction.</p>
+			</div>
+			<!-- Section Header End -->
+
+		</div>
+	</div>
+	<!-- Container End -->
+	
+<!-- ===================================
+	SCREENSHOOT --- hardware part
 ==================================== -->
 <section class="clean-custom-sec clean-section-wrapper background-two">
 	<div class="container">
 		<div class="row">
 			<!-- Section Header -->
 			<div class="col-md-12 col-sm-12 col-xs-12 clean-section-header wow fadeInDown">
-				<h1><span class="clean-color-contras">SCREENSHOOT</span></h1>
+				<h1><span class="clean-color-contras">HardWare Part</span></h1>
 				<div class="clean-line"></div>
 				<p class="col-md-8 col-sm-10 col-xs-12 col-md-offset-2 col-sm-offset-1">`Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat at, totam, nam aspernatur voluptatum nostrum officiis deserunt nisi quibusdam ipsam?</p>
 			</div>
@@ -253,35 +306,79 @@
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aut tenetur, amet earum quia eligendi obcaecati. Repudiandae id illum, vero iste enim reprehenderit quaerat, harum pariatur ipsa nulla tempora ex ratione illo assumenda libero ea, delectus vitae, expedita optio porro.</p>
 				
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aut tenetur, amet earum quia eligendi obcaecati. Repudiandae id illum, vero iste enim reprehenderit quaerat, harum pariatur ipsa nulla tempora ex ratione illo assumenda libero ea, delectus vitae, expedita optio porro.</p>
-				   
-				
 			</div>
 		</div>
 	</div>
 </section>
 
-<div class="tlinks">Collect from <a href="http://www.cssmoban.com/"  title="网站模板">网站模板</a></div>
 <!-- ===================================
-	FEATURED WORK SECTION
+	SCREENSHOOT --- software part
 ==================================== -->
-<section id="featured-works" class="clean-section-wrapper">
-	<!-- Container -->
+<section class="clean-custom-sec clean-section-wrapper background-two">
 	<div class="container">
 		<div class="row">
-
 			<!-- Section Header -->
 			<div class="col-md-12 col-sm-12 col-xs-12 clean-section-header wow fadeInDown">
-				<h1><span class="clean-color-contras">FEATURED WORK</span></h1>
+				<h1><span class="clean-color-contras">SoftWare Part</span></h1>
 				<div class="clean-line"></div>
-				<p class="col-md-8 col-sm-10 col-xs-12 col-md-offset-2 col-sm-offset-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam itaque enim aliquid praesentium odio dolorum sunt. Aperiam delectus, eligendi assumenda!</p>
+				<p class="col-md-8 col-sm-10 col-xs-12 col-md-offset-2 col-sm-offset-1">`Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat at, totam, nam aspernatur voluptatum nostrum officiis deserunt nisi quibusdam ipsam?</p>
 			</div>
 			<!-- Section Header End -->
-
+<!--
+			<div class="col-md-6 col-sm-6 col-xs-12 clean-custom-sec-img wow bounceInLeft">
+				<img src="images/custom.jpg" alt="Custom Image">
+			</div>
+-->
+			<div class="col-md-6 col-sm-6 col-xs-12 clean-custom-sec-text wow bounceInRight">
+				<h3>1.Object Recognition Algorithm</h3>
+				<p>Our object recognition algorithm could detect the red objects videoed by the Pi camera and calculate the center position. The usage of the OpenCV library makes the algorithm easy to implement. First of all, we install the openCV library into our Raspberry Pi. There are some ways to install the openCV library. The easiest and direct method is to run the command “sudo apt-get install libopencv-dev python-opencv” in the command prompt, which can help us to save several hours to compile the openCV. The version of our installed openCV is 这个需要去查一下。 After installing the openCV successfully, we need to assemble the Pi camera onto the R-Pi and set it up in configuration of R-Pi. As for the design of the recognition algorithm, it can be broken up into following parts. </p>
+			</div>
+			
+			<div class="col-md-6 col-sm-6 col-xs-12 clean-custom-sec-text wow bounceInRight">
+				<h3>2.PID control Algorithm:</h3>
+				<p>The size of image is 640*480 and thus the center of the image should be (320, 240). The object recognition algorithm should compute the center position of the object. Compute their difference and use it as feedback to control the servo and make the camera stare at the object, thereby achieving the camera tracking. Besides, the motors of wheel also need to be controlled to move suitably to track the balloon. </p>
+			</div>
+			
+			<div class="col-md-6 col-sm-6 col-xs-12 clean-custom-sec-text wow bounceInRight">
+				<h3>3. Multiprocessing Algorithm:</h3>
+				<p>To achieve our goal of tracking a falliing and moving balloon and pop it, we must decrease the latency and running time of every part as far as possible. At the beginning, the recognition and the course of sending order to control the motors and servo took about 105ms, which means it only processed less than ten pictures every second and it is far away from what we should do since we need to track the moving object and we only have limited time to decide the car’s movement. This delay time is too long. To reduce the delay time, one solution is to parallel process different task because of four cores in R-Pi, we can assign four jobs into four cores. In python, we could use the multiprocessing library to fully take advantage of four cores of R-Pi. </p>
+				<p>
+					<li>The first core is used to focus on capturing the video and put the image it reads into the “send_frame_queue”, whose minimum running time is 33 ms because the frequency of the Pi camera taking video is 30 fps. </li>
+					
+					<li>The second core is used to get the frame of images from send_frame_queue and process the images and extract the contours. Then put the contours into receive_contour_queue, which takes about 10 ms at most.
+					</li>
+					
+					<li>
+					The third core could get the contour from receive_contour_queue and compute the center position and area of the object and implement the PID control algorithm and control the motors of wheels. Since we set the sleep time to 20 ms when controlling the DC motors. In addition, it should put the parameters of controlling servo of camera into send_motor_queue. And the maximum running time of this processor is 22 ms. 
+					</li>
+					
+					<li>
+					The forth core can get the parameters to control the tilt kit from send_motor_queue and realize prediction function to ensure the smooth movement of tilt kit , whose maximum running time is 25 ms. 
+					</li>
+				</p>
+				
+				<p>This describes the tasks that every core executes and the time they spend. The longest time is up to the frequency of the Pi camera, which is unchangeable to some degree. So this multiprocessing system has optimized the entire program and decrease the running time every loop from 105 ms to 34 ms. Note that the “print” syntax will cause the delay and if wanting show the image onto the monitors, it will increase delay time. </p>
+			</div>
+			
+			<div class="col-md-6 col-sm-6 col-xs-12 clean-custom-sec-text wow bounceInRight">
+				<h3>4.Prediction Algorithm: </h3>
+				<p>When balloon quickly moved and get rid of the range that the camera can video, the servo of camera will not know how to move and it will be stuck. To solve this problem, we create the prediction algorithm. Prediction Algorithm is to make the servo move at the speed that is slower than the original speed but the same direction. “Original speed” is the speed of car before the balloon disappears. This is reasonable because the balloon is falling and we assume there is no wind to affect the balloon’s motion. </p>
+			</div>
+			
+			<div class="col-md-6 col-sm-6 col-xs-12 clean-custom-sec-text wow bounceInRight">
+				<h3>5.Pygame interface </h3>
+				<p>There are three modes in tracking robotic car. We use pygame library to implement visual interface to control them as the following picture shown. </p>
+				<p>The first mode is calibration mode, which is to find the balloon at the beginning in case the person who toss the balloon standing behind the car and it will not see the balloon. </p>
+				<p>The second mode is play mode, which is main program to realize our function. When a person toss a red balloon, the car will track the balloon until it explodes the balloon. </p>
+				<p>The third mode is celebration mode, which makes the car turn around and move forward and backward like a puppy. </p>
+			</div>
+			
 		</div>
 	</div>
-	<!-- Container End -->
+</section>
 	
 	<!-- Featured Works Slider -->
+	<!--
 	<div class="container-fluid">
 		<div class="row-fluid">
 
@@ -289,6 +386,7 @@
 				<div id="featured-work-slider" class="owl-carousel clean-portfolio-works-slider">
 
 					<!-- Work 1 -->
+	<!--
 					<div class="clean-portfolio-work-item">
 
 						<img src="images/featured-work/1.png" alt="Feature Work 1">
@@ -302,6 +400,7 @@
 					<!-- Work 1 End -->
 
 					<!-- Work 2 -->
+	<!--
 					<div class="clean-portfolio-work-item">
 
 						<img src="images/featured-work/2.png" alt="Feature Work 2">
@@ -315,6 +414,7 @@
 					<!-- Work 2 End -->
 
 					<!-- Work 3 -->
+	<!--
 					<div class="clean-portfolio-work-item">
 
 						<img src="images/featured-work/3.png" alt="Feature Work 3">
@@ -328,6 +428,7 @@
 					<!-- Work 3 End -->
 
 					<!-- Work 4 -->
+	<!--
 					<div class="clean-portfolio-work-item">
 
 						<img src="images/featured-work/4.png" alt="Feature Work 4">
@@ -341,6 +442,7 @@
 					<!-- Work 4 End -->
 
 					<!-- Work 5 -->
+	<!--
 					<div class="clean-portfolio-work-item">
 
 						<img src="images/featured-work/5.png" alt="Feature Work 5">
@@ -354,6 +456,7 @@
 					<!-- Work 5 End -->
 
 					<!-- Work 6 -->
+	<!--
 					<div class="clean-portfolio-work-item">
 
 						<img src="images/featured-work/6.png" alt="Feature Work 6">
@@ -367,6 +470,7 @@
 					<!-- Work 6 End -->
 
 					<!-- Work 7 -->
+	<!--
 					<div class="clean-portfolio-work-item">
 
 						<img src="images/featured-work/7.png" alt="Feature Work 7">
@@ -378,11 +482,12 @@
 
 					</div>
 					<!-- Work 7 End -->
+	<!--
 
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> 
 	<!-- Featured Works Slider -->
 
 </section>
@@ -397,7 +502,7 @@
 
 			<!-- Section Header -->
 			<div class="col-md-12 col-sm-12 col-xs-12 clean-section-header wow fadeInDown">
-				<h1><span class="clean-color-contras">FEATURES</span></h1>
+				<h1><span class="clean-color-contras">Testing and Issues</span></h1>
 				<div class="clean-line"></div>
 				<p class="col-md-8 col-sm-10 col-xs-12 col-md-offset-2 col-sm-offset-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus tempore voluptatem dolor cum autem qui maiores esse sit, vel voluptate.</p>
 			</div>
