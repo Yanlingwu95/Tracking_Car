@@ -230,7 +230,7 @@
 						<p>Object Recognition</p>
 					</div>
 				</a>
-				
+
 				<a href="#Tilt_kit">
 					<div class="col-md-3 col-sm-3 col-xs-12 clean-blurb-round-icon wow bounceIn" data-wow-delay=".5s">
 						<div class="clean-icon">
@@ -240,7 +240,7 @@
 						<p>Haedware PWM</p>
 					</div>
 				</a>
-				
+
 				<a href="#Multiprocessing">
 					<div class="col-md-3 col-sm-3 col-xs-12 clean-blurb-round-icon wow bounceIn" data-wow-delay=".5s">
 						<div class="clean-icon">
@@ -250,7 +250,7 @@
 						<p>Decrease latency</p>
 					</div>
 				</a>
-				
+
 				<a href="#Controller">
 					<div class="col-md-3 col-sm-3 col-xs-12 clean-blurb-round-icon wow bounceInRight" data-wow-delay=".5s">
 						<div class="clean-icon">
@@ -305,31 +305,31 @@
 				<h1><span class="clean-color-contras">Hardware Part</span></h1>
 				<div class="clean-line"></div>
 				<p class="col-md-8 col-sm-10 col-xs-12 col-md-offset-2 col-sm-offset-1">`The body of the car. </p>
-				 
+
 			</div>
 			<!-- Section Header End -->
-			
+
 			<div class="col-md-6 col-sm-6 col-xs-12 clean-custom-sec-text wow bounceInRight">
 				<h3>Overall</h3>
 				<p>Our robot, in short, is a differential drive vehicle with a Pi camera on it. Therefore, we would need two motors to drive the robot and a ball bearing keep it balancing. We also need robot frames to hold everything up. Here’s our shot of the robot. </p>
-				
+
 				<br />
 				<br />
 				<br />
-				
+
 				<h3>1. Self-designed motor bracket</h3>
 				<p>Everything is in placed from the previous lab section, except the motor brackets. We self-designed the motor brackets using Solidworks. After several simulation and testing, we would be able to fit the motor with the robot frame properly. </p>
 			</div>
-			
+
 			<div id=Controller class="col-md-6 col-sm-6 col-xs-12 clean-custom-sec-text wow bounceInRight">
 				<h3>2. DC motor driver</h3>
 
 				<p>Due to the speed limit, the Parallax continuous rotation servo is replaced by TT DC Gearbox Motor with higher rpm (200RPM). However, unlike Parallax continuous rotation servo, we can’t control the DC motor with PWM commands. The DC motor is powered from 3VDC to 6VDC. The higher voltage, the faster it goes. As a result, we bought a motor driver – “RasPi Robot Board v3”. It could transform the PWM signal into voltage level and thereby control our DC motors. </p>
 				<p>The driver is best required with 9VDC input to supply the motors, although a motor only required 5DV input. This is because if the voltage input is lower than 9VDC, the driver could be malfunctioning. Any unexpected result would come out of nowhere and it’s a painful bug to be realized when developing the robot. </p>
-				
+
 				<p>Also, keep in mind that although 6VDC is its maximum speed limit, it is when the DC motor is unloaded. Moreover, the higher voltage it required, the more current it would need as well. In terms of that means it’s more power consumption than normal, and we need to keep changing the batteries for stable speed outcome and high rpm.</p>
 			</div>
-			
+
 <!-- Featured Works Slider -->
 	<div class="container-fluid">
 		<div class="row-fluid">
@@ -348,7 +348,7 @@
 
 					</div>
 					<!-- Work 1 End -->
-			
+
 					<!-- Work 2 -->
 					<div class="clean-portfolio-work-item">
 
@@ -361,7 +361,7 @@
 
 					</div>
 					<!-- Work 2 End -->
-			
+
 					<!-- Work 3 -->
 					<div class="clean-portfolio-work-item">
 
@@ -374,7 +374,7 @@
 
 					</div>
 					<!-- Work 3 End -->
-			
+
 					<!-- Work 4 -->
 					<div class="clean-portfolio-work-item">
 
@@ -438,14 +438,14 @@
 					</li>
 				</ol>
 				</p>
-			
+
 				<br />i
 
 				<h3>2.Prediction Algorithm: </h3>
 				<p>When balloon quickly moved and get rid of the range that the camera can video, the servo of camera will not know how to move and it will be stuck. To solve this problem, we create the prediction algorithm. Prediction Algorithm is to make the servo move at the speed that is slower than the original speed but the same direction. “Original speed” is the speed of car before the balloon disappears. This is reasonable because the balloon is falling and we assume there is no wind to affect the balloon’s motion. </p>
-			
+
 			<br />
-			
+
 			<h3>3.Pygame interface </h3>
 				<p>There are three modes in tracking robotic car. We use pygame library to implement visual interface to control them as the following picture shown. </p>
 				<p>
@@ -462,33 +462,33 @@
 					</li>
 				</p>
 			<img src="images/slider/pygame_interface.png" alt="pygame interface" height="300" width="400">
-			
+
 			</div>
 
 			<div class="col-md-6 col-sm-6 col-xs-12 clean-custom-sec-text wow bounceInRight">
 				<h3>4.PID control Algorithm:</h3>
-				
+
 				<p>
-				Our objective is to make the balloon as center as possible. From the respective of the image input, the size of the image is 640*480 and thus the center of the image should be (320, 240). The image processing would recognize the red balloon, find out the contour, and calculate the center point and area. 
+				Our objective is to make the balloon as center as possible. From the respective of the image input, the size of the image is 640*480 and thus the center of the image should be (320, 240). The image processing would recognize the red balloon, find out the contour, and calculate the center point and area.
 				</p>
-				
-				<p>Given the balloon’s coordinates and the area, which is the system output, we would be able to control the robot with a closed loop controller. To make a simple closed loop controller, we choose PID controller. The benefits are one that it is simple, and second it is robust enough for our robot. 
+
+				<p>Given the balloon’s coordinates and the area, which is the system output, we would be able to control the robot with a closed loop controller. To make a simple closed loop controller, we choose PID controller. The benefits are one that it is simple, and second it is robust enough for our robot.
 				</p>
-				<p>PID algorithm is a closed loop control algorithm. PID stands for proportional-integral-derivative. It takes the present error, past error, and the future error as inputs to make appropriate control and thus reduce the error. 
+				<p>PID algorithm is a closed loop control algorithm. PID stands for proportional-integral-derivative. It takes the present error, past error, and the future error as inputs to make appropriate control and thus reduce the error.
 				</p>
-				
+
 				<p>
 				\(
-				K_i = \frac{K_p}{T_i}, K_d = K_p T_d 
+				K_i = \frac{K_p}{T_i}, K_d = K_p T_d
 				\)
-					
+
 				<br/>
 				<br/>
 				\(
 				u(t) = K(e(t) + \frac{1}{T_i} \int_{t}^{0} e(\tau) d\tau + T_d \frac{de(t)}{dt} )
 				\)
 				</p>
-				
+
 				<li> P-term: proportional to the error. </li>
 				<li> I-term : proportional to the integral of the error, </li>
 				<li> D-term: proportional to the derivative of the error. </li>
@@ -498,13 +498,13 @@
 				<li> PD controller, which Ti is unbounded. </li>
 				<li> PI controller, which Td is zero. </li>
 				<li> P controller, which Ti is unbounded and Td is zero. </li>
-				
+
 				<p>
 				Ti is the period of the integration time, and Td is the period of the oscillation time. </p>
 				<p>
 				For the reason that I-term is generally considered as dangerous when implementing PID controller, we only choose P controller and PD controller.  </p>
 				<p>
-				So how do we actually control our robot with PID controller? We have three degree of freedom, which is the tilt motor for the camera, the forward velocity for the robot, and the rotation of the robot. The robot has a constraint on side ways that it couldn’t move directly to the left or right. Thus, we overcome this problem by rotating the robot with motor rotating in the opposite direction. The forward and backward velocity is depending on the balloon area shown on the image. The rotation of the robot is depending on the X axis differential of from the image center. The camera tile motor is depending on the Y axis differential of from the image center. 
+				So how do we actually control our robot with PID controller? We have three degree of freedom, which is the tilt motor for the camera, the forward velocity for the robot, and the rotation of the robot. The robot has a constraint on side ways that it couldn’t move directly to the left or right. Thus, we overcome this problem by rotating the robot with motor rotating in the opposite direction. The forward and backward velocity is depending on the balloon area shown on the image. The rotation of the robot is depending on the X axis differential of from the image center. The camera tile motor is depending on the Y axis differential of from the image center.
 				</p>
 			</div>
 
@@ -637,7 +637,7 @@
 				Overall, we approximately meet the goals outlined in the description. Still, there are several changes that allow us to finish the project in a short time. First, rather than installing two cameras for object distance detection, we represent the distance from the object area in an image. Second, rather than catching the balloon into a bucket, we use needles to pop the balloon which would dramatically show the catching result. </p>
 			</div>
 			<!-- Section Header End -->
-			
+
 			<!-- Section Header -->
 			<div class="col-md-12 col-sm-12 col-xs-12 clean-section-header wow fadeInDown">
 			  <h1><font color="#7cd552">Conclusion</font></h1>
@@ -667,17 +667,17 @@
 				Also, during tracking mode the robot wasn’t performing its rotation obviously. We would refine the speed controller for faster response when it is moving forward and rotating. </p>
 			</div>
 			<!-- Section Header End -->
-			
+
 			<!-- Section Header -->
 			<div class="col-md-12 col-sm-12 col-xs-12 clean-section-header wow fadeInDown">
 			  <h1><font color="#7cd552">Acknowledge</font></h1>
 			  <div class="clean-line"></div>
 				<p class="col-md-8 col-sm-10 col-xs-12 col-md-offset-2 col-sm-offset-1">We would spend more time on developing the algorithm for estimating an object’s trajectory. Because there were times that the robot couldn’t track the balloon if it suddenly moved away, we would need a trajectory prediction algorithm to overcome this issue. </p>
 				<br/>
-				
+
 			</div>
 			<!-- Section Header End -->
-			
+
 		</div>
 	</div>
 </section>
@@ -696,107 +696,107 @@
 				<h1><span class="clean-color-contras">Appendix</span></h1>
 				<h2><span class="clean-color-contras"><em>1. Budget</em></span></h2>
 				<p class="col-md-8 col-sm-10 col-xs-12 col-md-offset-2 col-sm-offset-1">
-	
-				
-				<table>
-				  <thead>
-					<tr>
-					  <th>Item</th>
-					  <th>Unit Cost</th>
-					  <th>Quantity</th>
-					  <th>Total Cost</th>
-					</tr>
-				  </thead>
-				  <tbody>
-					<tr>
-					  <td>Line Sensors</td>
-					  <td>$3</td>
-					  <td>2</td>
-					  <td>$6</td>
-					</tr>
-					<tr>
-					  <td>Wall Sensors</td>
-					  <td>$7</td>
-					  <td>3</td>
-					  <td>$21</td>
-					</tr>
-					<tr>
-					  <td>Camera</td>
-					  <td>$14</td>
-					  <td>1</td>
-					  <td>$14</td>
-					</tr>
-					<tr>
-					  <td>Parallax Servos</td>
-					  <td>$13</td>
-					  <td>2</td>
-					  <td>$26</td>
-					</tr>
-					<tr>
-					  <td>Arduino Uno</td>
-					  <td>$16</td>
-					  <td>1</td>
-					  <td>$16</td>
-					</tr>
-					<tr>
-					  <td>Roller Ball Bearing</td>
-					  <td>$3</td>
-					  <td>1</td>
-					  <td>$3</td>
-					</tr>
-					<tr>
-					  <td>LED Strip</td>
-					  <td>$2</td>
-					  <td>1</td>
-					  <td>$2</td>
-					</tr>
-					<tr>
-					  <td>Protoboard</td>
-					  <td>$3</td>
-					  <td>2</td>
-					  <td>$6</td>
-					</tr>
-					<tr>
-					  <td>LM 358 Op Amp</td>
-					  <td>$0.16</td>
-					  <td>2</td>
-					  <td>$0.32</td>
-					</tr>
-					<tr>
-					  <td>Multiplexer</td>
-					  <td>$0.26</td>
-					  <td>1</td>
-					  <td>$0.26</td>
-					</tr>
-					<tr>
-					  <td>Phototransistor</td>
-					  <td>$1</td>
-					  <td>1</td>
-					  <td>$1</td>
-					</tr>
-					<tr>
-					  <td>Electret Microphone</td>
-					  <td>$1</td>
-					  <td>1</td>
-					  <td>$1</td>
-					</tr>
-					<tr>
-					  <td>NRF24L01+ Radio</td>
-					  <td>$3</td>
-					  <td>1</td>
-					  <td>$3</td>
-					</tr>
-					<tr>
-					  <td> </td>
-					  <td> </td>
-					  <td> </td>
-					  <td>$99.58</td>
-					</tr>
-				  </tbody>
-				</table>
-				
-				</p>
-		  </div>
+					<table>
+						  <thead>
+							<tr>
+							  <th>Item</th>
+							  <th>Unit Cost</th>
+							  <th>Quantity</th>
+							  <th>Total Cost</th>
+							</tr>
+						  </thead>
+						  <tbody>
+							<tr>
+							  <td>Line Sensors</td>
+							  <td>$3</td>
+							  <td>2</td>
+							  <td>$6</td>
+							</tr>
+							<tr>
+							  <td>Wall Sensors</td>
+							  <td>$7</td>
+							  <td>3</td>
+							  <td>$21</td>
+							</tr>
+							<tr>
+							  <td>Camera</td>
+							  <td>$14</td>
+							  <td>1</td>
+							  <td>$14</td>
+							</tr>
+							<tr>
+							  <td>Parallax Servos</td>
+							  <td>$13</td>
+							  <td>2</td>
+							  <td>$26</td>
+							</tr>
+							<tr>
+							  <td>Arduino Uno</td>
+							  <td>$16</td>
+							  <td>1</td>
+							  <td>$16</td>
+							</tr>
+							<tr>
+							  <td>Roller Ball Bearing</td>
+							  <td>$3</td>
+							  <td>1</td>
+							  <td>$3</td>
+							</tr>
+							<tr>
+							  <td>LED Strip</td>
+							  <td>$2</td>
+							  <td>1</td>
+							  <td>$2</td>
+							</tr>
+							<tr>
+							  <td>Protoboard</td>
+							  <td>$3</td>
+							  <td>2</td>
+							  <td>$6</td>
+							</tr>
+							<tr>
+							  <td>LM 358 Op Amp</td>
+							  <td>$0.16</td>
+							  <td>2</td>
+							  <td>$0.32</td>
+							</tr>
+							<tr>
+							  <td>Multiplexer</td>
+							  <td>$0.26</td>
+							  <td>1</td>
+							  <td>$0.26</td>
+							</tr>
+							<tr>
+							  <td>Phototransistor</td>
+							  <td>$1</td>
+							  <td>1</td>
+							  <td>$1</td>
+							</tr>
+							<tr>
+							  <td>Electret Microphone</td>
+							  <td>$1</td>
+							  <td>1</td>
+							  <td>$1</td>
+							</tr>
+							<tr>
+							  <td>NRF24L01+ Radio</td>
+							  <td>$3</td>
+							  <td>1</td>
+							  <td>$3</td>
+							</tr>
+							<tr>
+							  <td> </td>
+							  <td> </td>
+							  <td> </td>
+							  <td>$99.58</td>
+							</tr>
+						  </tbody>
+						</table>
+					</p>
+
+					<h2><span class="clean-color-contras"><em>2. Code</em></span></h2>
+					<p>For more codes, please visit our <a href="https://github.com/yehmostabsurd/XiaoPi_Luck">github</a> page. </p>
+				</div>
 			<div class="col-md-12 col-sm-12 col-xs-12 clean-section-header wow fadeInDown clean-section-header-parallax">
 			  <h1><span class="clean-color-contras">Appendix</span></h1>
 			  <h2><span class="clean-color-contras"><em>1. Budget</em></span></h2>
@@ -807,8 +807,12 @@
 			    | zebra stripes | are neat      |    $1 | </p>
 		  </div>
 			<!-- Section Header End -->
+
+
+			</div>
 		</div>
 	</div>
+
 </section>
 
 
@@ -845,6 +849,7 @@
 
 			</div>
 		</div>
+
 	</div>
 </footer>
 
