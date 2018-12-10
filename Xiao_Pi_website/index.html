@@ -61,6 +61,10 @@
 	<script src="http://css3-mediaqueries-js.googlecode.com/files/css3-mediaqueries.js"></script>
 	<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
 <![endif]-->
+	<script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
+	<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async>
+		</script>
 </head>
 
 <body>
@@ -114,13 +118,13 @@
 						<a href="#offer"> Testing and Issue </a>
 					</li>
 					<li>
-						<a href="#pricing">Results</a>
+						<a href="#pricing">Conclusion</a>
 					</li>
 					<li>
-						<a href="#testimonial">Conclusion</a>
+						<a href="#testimonial">Future Work</a>
 					</li>
 					<li>
-						<a href="#contact">Code Appendix</a>
+						<a href="#contact">Appendix</a>
 					</li>
 				</ul>
 			</div>
@@ -216,38 +220,46 @@
 
 			<!-- What We Do -->
 			<div class="clean-what-we-do">
+				<a href="#Pi_camera">
 
-				<div class="col-md-3 col-sm-3 col-xs-12 clean-blurb-round-icon wow bounceInLeft">
-					<div class="clean-icon">
-						<i class="fa fa-html5"></i>
+					<div class="col-md-3 col-sm-3 col-xs-12 clean-blurb-round-icon wow bounceInLeft">
+						<div class="clean-icon">
+							<i class="fa fa-html5"></i>
+						</div>
+						<h3>Pi Camera</h3>
+						<p>Object Recognition</p>
 					</div>
-					<h3>Pi Camera</h3>
-					<p>Object Recognition</p>
-				</div>
-
-				<div class="col-md-3 col-sm-3 col-xs-12 clean-blurb-round-icon wow bounceIn" data-wow-delay=".5s">
-					<div class="clean-icon">
-						<i class="fa fa-css3"></i>
+				</a>
+				
+				<a href="#Tilt_kit">
+					<div class="col-md-3 col-sm-3 col-xs-12 clean-blurb-round-icon wow bounceIn" data-wow-delay=".5s">
+						<div class="clean-icon">
+							<i class="fa fa-css3"></i>
+						</div>
+						<h3>Tilt kit</h3>
+						<p>Haedware PWM</p>
 					</div>
-					<h3>Tilt kit</h3>
-					<p>Haedware PWM</p>
-				</div>
-
-				<div class="col-md-3 col-sm-3 col-xs-12 clean-blurb-round-icon wow bounceIn" data-wow-delay=".5s">
-					<div class="clean-icon">
-						<i class="fa fa-laptop"></i>
+				</a>
+				
+				<a href="#Multiprocessing">
+					<div class="col-md-3 col-sm-3 col-xs-12 clean-blurb-round-icon wow bounceIn" data-wow-delay=".5s">
+						<div class="clean-icon">
+							<i class="fa fa-laptop"></i>
+						</div>
+						<h3>Multiprocessing</h3>
+						<p>Decrease latency</p>
 					</div>
-					<h3>Multiprocessing</h3>
-					<p>Decrease latency</p>
-				</div>
-
-				<div class="col-md-3 col-sm-3 col-xs-12 clean-blurb-round-icon wow bounceInRight" data-wow-delay=".5s">
-					<div class="clean-icon">
-						<i class="fa fa-support"></i>
+				</a>
+				
+				<a href="#Controller">
+					<div class="col-md-3 col-sm-3 col-xs-12 clean-blurb-round-icon wow bounceInRight" data-wow-delay=".5s">
+						<div class="clean-icon">
+							<i class="fa fa-support"></i>
+						</div>
+						<h3>DC motor controller</h3>
+						<p>wheels & PID </p>
 					</div>
-					<h3>DC motor controller</h3>
-					<p>wheels</p>
-				</div>
+				</a>
 
 			</div>
 			<!-- What We Do End -->
@@ -309,7 +321,7 @@
 				<p>Everything is in placed from the previous lab section, except the motor brackets. We self-designed the motor brackets using Solidworks. After several simulation and testing, we would be able to fit the motor with the robot frame properly. </p>
 			</div>
 			
-			<div class="col-md-6 col-sm-6 col-xs-12 clean-custom-sec-text wow bounceInRight">
+			<div id=Controller class="col-md-6 col-sm-6 col-xs-12 clean-custom-sec-text wow bounceInRight">
 				<h3>2. DC motor driver</h3>
 
 				<p>Due to the speed limit, the Parallax continuous rotation servo is replaced by TT DC Gearbox Motor with higher rpm (200RPM). However, unlike Parallax continuous rotation servo, we can’t control the DC motor with PWM commands. The DC motor is powered from 3VDC to 6VDC. The higher voltage, the faster it goes. As a result, we bought a motor driver – “RasPi Robot Board v3”. It could transform the PWM signal into voltage level and thereby control our DC motors. </p>
@@ -397,9 +409,9 @@
 			</div>
 			<!-- Section Header End -->
 
-			<div class="col-md-6 col-sm-6 col-xs-12 clean-custom-sec-text wow bounceInRight">
+			<div id=Pi_camera class="col-md-6 col-sm-6 col-xs-12 clean-custom-sec-text wow bounceInRight">
 				<h3>1.Object Recognition Algorithm</h3>
-				<p>Our object recognition algorithm could detect the red objects videoed by the Pi camera and calculate the center position. The usage of the OpenCV library makes the algorithm easy to implement. First of all, we install the openCV library into our Raspberry Pi. There are some ways to install the openCV library. The easiest and direct method is to run the command “sudo apt-get install libopencv-dev python-opencv” in the command prompt, which can help us to save several hours to compile the openCV. The version of our installed openCV is 这个需要去查一下。 After installing the openCV successfully, we need to assemble the Pi camera onto the R-Pi and set it up in configuration of R-Pi. As for the design of the recognition algorithm, it can be broken up into following parts. </p>
+				<p>Our object recognition algorithm could detect the red objects videoed by the Pi camera and calculate the center position. The usage of the OpenCV library makes the algorithm easy to implement. First of all, we install the openCV library into our Raspberry Pi. There are some ways to install the openCV library. The easiest and direct method is to run the command “sudo apt-get install libopencv-dev python-opencv” in the command prompt, which can help us to save several hours to compile the openCV. The version of our installed openCV is '2.4.9.1'. After installing the openCV successfully, we need to assemble the Pi camera onto the R-Pi and set it up in configuration of R-Pi. As for the design of the recognition algorithm, it can be broken up into following parts. </p>
 
 				<p>
 				<ol><li>
@@ -426,15 +438,78 @@
 					</li>
 				</ol>
 				</p>
+			
+				<br />i
+
+				<h3>2.Prediction Algorithm: </h3>
+				<p>When balloon quickly moved and get rid of the range that the camera can video, the servo of camera will not know how to move and it will be stuck. To solve this problem, we create the prediction algorithm. Prediction Algorithm is to make the servo move at the speed that is slower than the original speed but the same direction. “Original speed” is the speed of car before the balloon disappears. This is reasonable because the balloon is falling and we assume there is no wind to affect the balloon’s motion. </p>
+			
+			<br />
+			
+			<h3>3.Pygame interface </h3>
+				<p>There are three modes in tracking robotic car. We use pygame library to implement visual interface to control them as the following picture shown. </p>
+				<p>
+					<li>
+					The first mode is calibration mode, which is to find the balloon at the beginning in case the person who toss the balloon standing behind the car and it will not see the balloon.
+					</li>
+
+					<li>
+					The second mode is play mode, which is main program to realize our function. When a person toss a red balloon, the car will track the balloon until it explodes the balloon.
+					</li>
+
+					<li>
+					The third mode is celebration mode, which makes the car turn around and move forward and backward like a puppy.
+					</li>
+				</p>
+			<img src="images/slider/pygame_interface.png" alt="pygame interface" height="300" width="400">
+			
 			</div>
 
 			<div class="col-md-6 col-sm-6 col-xs-12 clean-custom-sec-text wow bounceInRight">
-				<h3>2.PID control Algorithm:</h3>
-				<p>The size of image is 640*480 and thus the center of the image should be (320, 240). The object recognition algorithm should compute the center position of the object. Compute their difference and use it as feedback to control the servo and make the camera stare at the object, thereby achieving the camera tracking. Besides, the motors of wheel also need to be controlled to move suitably to track the balloon. </p>
+				<h3>4.PID control Algorithm:</h3>
+				
+				<p>
+				Our objective is to make the balloon as center as possible. From the respective of the image input, the size of the image is 640*480 and thus the center of the image should be (320, 240). The image processing would recognize the red balloon, find out the contour, and calculate the center point and area. 
+				</p>
+				
+				<p>Given the balloon’s coordinates and the area, which is the system output, we would be able to control the robot with a closed loop controller. To make a simple closed loop controller, we choose PID controller. The benefits are one that it is simple, and second it is robust enough for our robot. 
+				</p>
+				<p>PID algorithm is a closed loop control algorithm. PID stands for proportional-integral-derivative. It takes the present error, past error, and the future error as inputs to make appropriate control and thus reduce the error. 
+				</p>
+				
+				<p>
+				\(
+				K_i = \frac{K_p}{T_i}, K_d = K_p T_d 
+				\)
+					
+				<br/>
+				<br/>
+				\(
+				u(t) = K(e(t) + \frac{1}{T_i} \int_{t}^{0} e(\tau) d\tau + T_d \frac{de(t)}{dt} )
+				\)
+				</p>
+				
+				<li> P-term: proportional to the error. </li>
+				<li> I-term : proportional to the integral of the error, </li>
+				<li> D-term: proportional to the derivative of the error. </li>
+				<p>
+				Actually, not all PID controller used up three terms. To be more specific, the there are controllers like
+				</p>
+				<li> PD controller, which Ti is unbounded. </li>
+				<li> PI controller, which Td is zero. </li>
+				<li> P controller, which Ti is unbounded and Td is zero. </li>
+				
+				<p>
+				Ti is the period of the integration time, and Td is the period of the oscillation time. </p>
+				<p>
+				For the reason that I-term is generally considered as dangerous when implementing PID controller, we only choose P controller and PD controller.  </p>
+				<p>
+				So how do we actually control our robot with PID controller? We have three degree of freedom, which is the tilt motor for the camera, the forward velocity for the robot, and the rotation of the robot. The robot has a constraint on side ways that it couldn’t move directly to the left or right. Thus, we overcome this problem by rotating the robot with motor rotating in the opposite direction. The forward and backward velocity is depending on the balloon area shown on the image. The rotation of the robot is depending on the X axis differential of from the image center. The camera tile motor is depending on the Y axis differential of from the image center. 
+				</p>
 			</div>
 
-			<div class="col-md-6 col-sm-6 col-xs-12 clean-custom-sec-text wow bounceInRight">
-				<h3>3. Multiprocessing Algorithm:</h3>
+			<div id=Multiprocessing class="col-md-6 col-sm-6 col-xs-12 clean-custom-sec-text wow bounceInRight">
+				<h3>5. Multiprocessing Algorithm:</h3>
 				<p>To achieve our goal of tracking a falliing and moving balloon and pop it, we must decrease the latency and running time of every part as far as possible. At the beginning, the recognition and the course of sending order to control the motors and servo took about 105ms, which means it only processed less than ten pictures every second and it is far away from what we should do since we need to track the moving object and we only have limited time to decide the car’s movement. This delay time is too long. To reduce the delay time, one solution is to parallel process different task because of four cores in R-Pi, we can assign four jobs into four cores. In python, we could use the multiprocessing library to fully take advantage of four cores of R-Pi. </p>
 				<p><ol>
 					<li>The first core is used to focus on capturing the video and put the image it reads into the “send_frame_queue”, whose minimum running time is 33 ms because the frequency of the Pi camera taking video is 30 fps. </li>
@@ -454,31 +529,6 @@
 
 				<p>This describes the tasks that every core executes and the time they spend. The longest time is up to the frequency of the Pi camera, which is unchangeable to some degree. So this multiprocessing system has optimized the entire program and decrease the running time every loop from 105 ms to 34 ms. Note that the “print” syntax will cause the delay and if wanting show the image onto the monitors, it will increase delay time. </p>
 			</div>
-
-			<div class="col-md-6 col-sm-6 col-xs-12 clean-custom-sec-text wow bounceInRight">
-				<h3>4.Prediction Algorithm: </h3>
-				<p>When balloon quickly moved and get rid of the range that the camera can video, the servo of camera will not know how to move and it will be stuck. To solve this problem, we create the prediction algorithm. Prediction Algorithm is to make the servo move at the speed that is slower than the original speed but the same direction. “Original speed” is the speed of car before the balloon disappears. This is reasonable because the balloon is falling and we assume there is no wind to affect the balloon’s motion. </p>
-			</div>
-
-			<div class="col-md-6 col-sm-6 col-xs-12 clean-custom-sec-text wow bounceInRight">
-				<h3>5.Pygame interface </h3>
-				<p>There are three modes in tracking robotic car. We use pygame library to implement visual interface to control them as the following picture shown. </p>
-				<p>
-					<li>
-					The first mode is calibration mode, which is to find the balloon at the beginning in case the person who toss the balloon standing behind the car and it will not see the balloon.
-					</li>
-
-					<li>
-					The second mode is play mode, which is main program to realize our function. When a person toss a red balloon, the car will track the balloon until it explodes the balloon.
-					</li>
-
-					<li>
-					The third mode is celebration mode, which makes the car turn around and move forward and backward like a puppy.
-					</li>
-
-				</p>
-			</div>
-
 		</div>
 	</div>
 </section>
@@ -501,13 +551,13 @@
 		<!-- Section Header End -->
 
 <!-- ===================================
-	SCREENSHOOT --- hardware part
+	SCREENSHOOT --- Issue
 ==================================== -->
 <section class="clean-custom-sec clean-section-wrapper background-two">
 	<div class="container">
 		<div class="row">
 				<div class="col-md-6 col-sm-6 col-xs-12 clean-custom-sec-text wow bounceInRight">
-				<h3>1. C++ OpenCV install Issue</h3>
+				<h3>1. C++ OpenCV install</h3>
 				<p>
 				Since our robotic car need to track the falling balloon and move to the landing location very fast and considering that python is a kind of interpreted programming language and C++ is a complied programming language, we initially planned to install C++ version of openCV. We tried to install the C++ OpenCV library several times and every time it took more than three hours to compile it. We finally installed the C++ openCV successfully but when we tried to run some codes, it failed and said that it cannot open the Pi camera, which took us about one week. After discussion with Professor Skovira, we decide to use python openCV first and see whether it can meet our requirement. But we will still introduce how to install C++ openCV here briefly.
 				<ol>
@@ -551,17 +601,17 @@
 			</div>
 
 			<div class="col-md-6 col-sm-6 col-xs-12 clean-custom-sec-text wow bounceInRight">
-				<h3>2.Pi camera setting issue</h3>
+				<h3>2.Pi Camera Setting</h3>
 				<p>After python OpenCV library installed, we tried to run testing code, there is one error saying “OpenCV Error: Assertion failed (scn == 3 || scn == 4) in cvtColor, file /build/opencv-U1UwfN/opencv-2.4.9.1+dfsq1/modules/imgproc/src/color.cpp, line 3737”. We searched it on Google, this error can be fixed by running “sudo modprobe bcm2835-v4l2“, which is used to intall the v412 driver on the bcm2835. We thought it is one time install but when the R-Pi reboot, the same error appeared again. Therefore, we add this command into /etc/modules. Then, it can work smoothly.</p>
 			</div>
 
-			<div class="col-md-6 col-sm-6 col-xs-12 clean-custom-sec-text wow bounceInRight">
-				<h3>3. Hardware PWM issue</h3>
+			<div id=Tilt_kit class="col-md-6 col-sm-6 col-xs-12 clean-custom-sec-text wow bounceInRight">
+				<h3>3. Hardware PWM</h3>
 				<p>To control the servo of pan tilt kit, under the recommendation of Professor Skovira, we use the hardware PWM to generate control signal instead of software PWM, this is because the signal generated by hardware PWM is stable and less noise in a R-Pi multiprocessing environment. When we following the instruction of the professor to build the hardware PWM file and connect the circuit, we cannot send any signal to the GPIO pin. After asking other students who have experience to implement the hardware PWM, we know some very significant points. One is only GPIO pin 12 and pin 13 can be used to generated hardware PWM signal. Another is before running the code, we need to run “sudo pigpiod” to launch the pigpio library as a daemon. </p>
 			</div>
 
 			<div class="col-md-6 col-sm-6 col-xs-12 clean-custom-sec-text wow bounceInRight">
-				<h3>4. DC controller Issure</h3>
+				<h3>4. DC controller</h3>
 				<p>Because of tracking and chasing the falling balloon, we need to faster motors to drive the robotic car and thus, with the help of the professor Skovira, we decide to use the DC motor to drive and buy DC controller to control two DC motor to move. It works well but we found that once we add the controller program into multiprocessing, the whole program will be stuck and the queue will keep a lot of unprocessed data. After we monitored the running time of every core, we noticed that the every running time of the third core which is used to process the PID control algorithm and send order to DC controller is far longer than others and the average running time is 202 ms. At first, we thought this could be the problem of the hardware because of the delay of opening motors or the bad connection of circuit to make the transmitting slow. But when we check everything about the circuit, there is no bad connection. So we searched the software stuff. We found there is a syntax about “time.sleep(0.2)” in the library that is used to control the DC controller and this is probably the reason why it runs so slowly. So we changed the source of the library and compile it again. It worked, the running time of the third core decreased to 22 ms. </p>
 			</div>
 		</div>
@@ -570,7 +620,7 @@
 
 
 <!-- ===================================
-	PRICING TABLE SECTION
+	Result and Conclusion SECTION
 ==================================== -->
 <section id="pricing" class="clean-pricing-section">
 	<div class="container">
@@ -578,138 +628,63 @@
 
 			<!-- Section Header -->
 			<div class="col-md-12 col-sm-12 col-xs-12 clean-section-header wow fadeInDown">
-				<h1><span class="clean-color-contras">PRICE</span></h1>
-				<div class="clean-line"></div>
+			  <h1><font color="#7cd552">Result</font></h1>
+			  <div class="clean-line"></div>
+				<p class="col-md-8 col-sm-10 col-xs-12 col-md-offset-2 col-sm-offset-1">Initially, we were very concerned about that torque and speed of our motor. Since tossing a ball and catch it before it lands is a hard job to achieve, the robot would require a high speed motor and high speed object detection. To achieve this goal, we were thinking about designing a new gear box with lower reduction ratio. By lowering the reduction ration, the motor would have higher speed but lower torque. It is possible that the new designed gear box wouldn’t work out and ended up consuming us a lot of time. Also, both of us had few knowledges about designing a 3d object, not to mention designing a gear box. As a result, we decided to stay with the original reduction ratio and take the easier task to design the motors’ bracket. </p>
+				<br/>
+				<br/>
+				<p class="col-md-8 col-sm-10 col-xs-12 col-md-offset-2 col-sm-offset-1">
+				Overall, we approximately meet the goals outlined in the description. Still, there are several changes that allow us to finish the project in a short time. First, rather than installing two cameras for object distance detection, we represent the distance from the object area in an image. Second, rather than catching the balloon into a bucket, we use needles to pop the balloon which would dramatically show the catching result. </p>
+			</div>
+			<!-- Section Header End -->
+			
+			<!-- Section Header -->
+			<div class="col-md-12 col-sm-12 col-xs-12 clean-section-header wow fadeInDown">
+			  <h1><font color="#7cd552">Conclusion</font></h1>
+			  <div class="clean-line"></div>
 				<p class="col-md-8 col-sm-10 col-xs-12 col-md-offset-2 col-sm-offset-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae dolorem nostrum pariatur consequatur aut est aspernatur reiciendis veniam delectus saepe.</p>
 			</div>
 			<!-- Section Header End -->
-
-			<div class="clean-pricing-wrapper">
-
-				<!-- Plans -->
-				<div class="col-md-4 col-sm-4 col-xs-12 clean-pricing-plans wow bounceInLeft">
-					<div class="clean-pricing-titles">
-						<h2>Free</h2>
-						<p><span>$0</span>Month</p>
-					</div>
-					<div class="clean-pricing-service-name">
-						<ul>
-							<li>HTML5 Template</li>
-							<li>CSS valid</li>
-							<li>Responsive Theme</li>
-							<li>Easy edit</li>
-							<li>Support</li>
-						</ul>
-					</div>
-
-					<a href="" class="clean-signup-btn">SIGN UP</a>
-				</div>
-				<!-- Plans End -->
-
-				<!-- Plans -->
-				<div class="col-md-4 col-sm-4 col-xs-12 clean-pricing-plans clean-recommended-pricing wow fadeInUp" data-wow-duration="1s">
-					<div class="clean-pricing-titles">
-						<h2>BASIC</h2>
-						<p><span>$15/</span>Month</p>
-					</div>
-					<div class="clean-pricing-service-name">
-						<ul>
-							<li>HTML5 Template</li>
-							<li>CSS valid</li>
-							<li>Responsive Theme</li>
-							<li>Easy edit</li>
-							<li>Support</li>
-						</ul>
-					</div>
-
-					<a href="" class="clean-signup-btn">SIGN UP</a>
-				</div>
-				<!-- Plans End -->
-
-				<!-- Plans -->
-				<div class="col-md-4 col-sm-4 col-xs-12 clean-pricing-plans wow bounceInRight">
-					<div class="clean-pricing-titles">
-						<h2>PREMIUM</h2>
-						<p><span>$45/</span>Month</p>
-					</div>
-					<div class="clean-pricing-service-name">
-						<ul>
-							<li>HTML5 Template</li>
-							<li>CSS valid</li>
-							<li>Responsive Theme</li>
-							<li>Easy edit</li>
-							<li>Support</li>
-						</ul>
-					</div>
-
-					<a href="" class="clean-signup-btn">SIGN UP</a>
-				</div>
-				<!-- Plans End -->
-
-			</div>
 		</div>
 	</div>
 </section>
 
-
 <!-- ===================================
-	TESTIMONIALS SECTION
+	Future Work SECTION
 ==================================== -->
-<section id="testimonial"  class="clean-testimonial-section background-two">
+<section id="testimonial" class="clean-pricing-section">
+	<div class="container">
+		<div class="row">
 
-	<div class="clean-parallax-overlay"></div>
-
-	<div class="clean-testimonial-wrapper wow bounceIn">
-		<div class="container">
-			<div class="row">
-
-				<i class="icon-bubbles comment-icon"></i>
-
-				<!-- Testimonial Slider -->
-				<div id="clean-testimonial" class="owl-carousel clean-testimonial">
-
-					<!-- Slides -->
-
-					<div class="clean-testimonial-slides col-md-8 col-sm-10 col-xs-12 col-md-offset-2 col-sm-offset-1">
-						<div class="clean-member-img-wrapper">
-							<img src="images/testimonial/1.png" alt="Team Member 2">
-						</div>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus mollitia, dolorem eos nisi totam perspiciatis debitis nemo veritatis repellat impedit provident, sapiente magni voluptatem! Voluptas veritatis velit, saepe incidunt modi.</p>
-						<p class="clean-client-info">John Doe</p>
-					</div>
-					<!-- Slides End -->
-
-					<!-- Slides -->
-					<div class="clean-testimonial-slides col-md-8 col-sm-10 col-xs-12 col-md-offset-2 col-sm-offset-1">
-						<div class="clean-member-img-wrapper">
-							<img src="images/testimonial/2.png" alt="Team Member 2">
-						</div>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus eum quasi illum, impedit perspiciatis saepe officiis dolore alias expedita et obcaecati doloremque, quis ipsam aperiam, eveniet eligendi at adipisci quisquam.</p>
-						<p class="clean-client-info">Pirlo Doe</p>
-					</div>
-					<!-- Slides End -->
-
-					<!-- Slides -->
-					<div class="clean-testimonial-slides col-md-8 col-sm-10 col-xs-12 col-md-offset-2 col-sm-offset-1">
-						<div class="clean-member-img-wrapper">
-							<img src="images/testimonial/3.png" alt="Team Member 2">
-						</div>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, aut blanditiis. Commodi iste, dignissimos laboriosam magni mollitia perferendis accusantium quis, totam quaerat, reprehenderit officia explicabo. Cum cupiditate error temporibus blanditiis.</p>
-						<p class="clean-client-info">Jin Doe</p>
-					</div>
-					<!-- Slides End -->
-
-				</div>
-				<!-- Testimonial Slider End -->
-
+			<!-- Section Header -->
+			<div class="col-md-12 col-sm-12 col-xs-12 clean-section-header wow fadeInDown">
+			  <h1><font color="#7cd552">Future Work</font></h1>
+			  <div class="clean-line"></div>
+				<p class="col-md-8 col-sm-10 col-xs-12 col-md-offset-2 col-sm-offset-1">We would spend more time on developing the algorithm for estimating an object’s trajectory. Because there were times that the robot couldn’t track the balloon if it suddenly moved away, we would need a trajectory prediction algorithm to overcome this issue. </p>
+				<br/>
+				<br/>
+				<p class="col-md-8 col-sm-10 col-xs-12 col-md-offset-2 col-sm-offset-1">
+				Also, during tracking mode the robot wasn’t performing its rotation obviously. We would refine the speed controller for faster response when it is moving forward and rotating. </p>
 			</div>
+			<!-- Section Header End -->
+			
+			<!-- Section Header -->
+			<div class="col-md-12 col-sm-12 col-xs-12 clean-section-header wow fadeInDown">
+			  <h1><font color="#7cd552">Acknowledge</font></h1>
+			  <div class="clean-line"></div>
+				<p class="col-md-8 col-sm-10 col-xs-12 col-md-offset-2 col-sm-offset-1">We would spend more time on developing the algorithm for estimating an object’s trajectory. Because there were times that the robot couldn’t track the balloon if it suddenly moved away, we would need a trajectory prediction algorithm to overcome this issue. </p>
+				<br/>
+				
+			</div>
+			<!-- Section Header End -->
+			
 		</div>
 	</div>
 </section>
 
 
 <!-- ===================================
-	CONTACT SECTION
+	Appendix SECTION
 ==================================== -->
 <section id="contact" class="clean-section-wrapper clean-contact-section background-one" data-stellar-background-ratio="0.5">
 <div class="clean-parallax-overlay"></div>
@@ -718,39 +693,120 @@
 
 			<!-- Section Header -->
 			<div class="col-md-12 col-sm-12 col-xs-12 clean-section-header wow fadeInDown clean-section-header-parallax">
-				<h1><span class="clean-color-contras">CONTACT US</span></h1>
-				<div class="clean-line"></div>
-				<p class="col-md-8 col-sm-10 col-xs-12 col-md-offset-2 col-sm-offset-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum error ab rem atque impedit soluta quidem, deleniti culpa. Accusantium placeat commodi harum, aut cumque numquam molestiae vel ut eum consequuntur.</p>
-			</div>
+				<h1><span class="clean-color-contras">Appendix</span></h1>
+				<h2><span class="clean-color-contras"><em>1. Budget</em></span></h2>
+				<p class="col-md-8 col-sm-10 col-xs-12 col-md-offset-2 col-sm-offset-1">
+	
+				
+				<table>
+				  <thead>
+					<tr>
+					  <th>Item</th>
+					  <th>Unit Cost</th>
+					  <th>Quantity</th>
+					  <th>Total Cost</th>
+					</tr>
+				  </thead>
+				  <tbody>
+					<tr>
+					  <td>Line Sensors</td>
+					  <td>$3</td>
+					  <td>2</td>
+					  <td>$6</td>
+					</tr>
+					<tr>
+					  <td>Wall Sensors</td>
+					  <td>$7</td>
+					  <td>3</td>
+					  <td>$21</td>
+					</tr>
+					<tr>
+					  <td>Camera</td>
+					  <td>$14</td>
+					  <td>1</td>
+					  <td>$14</td>
+					</tr>
+					<tr>
+					  <td>Parallax Servos</td>
+					  <td>$13</td>
+					  <td>2</td>
+					  <td>$26</td>
+					</tr>
+					<tr>
+					  <td>Arduino Uno</td>
+					  <td>$16</td>
+					  <td>1</td>
+					  <td>$16</td>
+					</tr>
+					<tr>
+					  <td>Roller Ball Bearing</td>
+					  <td>$3</td>
+					  <td>1</td>
+					  <td>$3</td>
+					</tr>
+					<tr>
+					  <td>LED Strip</td>
+					  <td>$2</td>
+					  <td>1</td>
+					  <td>$2</td>
+					</tr>
+					<tr>
+					  <td>Protoboard</td>
+					  <td>$3</td>
+					  <td>2</td>
+					  <td>$6</td>
+					</tr>
+					<tr>
+					  <td>LM 358 Op Amp</td>
+					  <td>$0.16</td>
+					  <td>2</td>
+					  <td>$0.32</td>
+					</tr>
+					<tr>
+					  <td>Multiplexer</td>
+					  <td>$0.26</td>
+					  <td>1</td>
+					  <td>$0.26</td>
+					</tr>
+					<tr>
+					  <td>Phototransistor</td>
+					  <td>$1</td>
+					  <td>1</td>
+					  <td>$1</td>
+					</tr>
+					<tr>
+					  <td>Electret Microphone</td>
+					  <td>$1</td>
+					  <td>1</td>
+					  <td>$1</td>
+					</tr>
+					<tr>
+					  <td>NRF24L01+ Radio</td>
+					  <td>$3</td>
+					  <td>1</td>
+					  <td>$3</td>
+					</tr>
+					<tr>
+					  <td> </td>
+					  <td> </td>
+					  <td> </td>
+					  <td>$99.58</td>
+					</tr>
+				  </tbody>
+				</table>
+				
+				</p>
+		  </div>
+			<div class="col-md-12 col-sm-12 col-xs-12 clean-section-header wow fadeInDown clean-section-header-parallax">
+			  <h1><span class="clean-color-contras">Appendix</span></h1>
+			  <h2><span class="clean-color-contras"><em>1. Budget</em></span></h2>
+			  <p class="col-md-8 col-sm-10 col-xs-12 col-md-offset-2 col-sm-offset-1"> | Tables        | Are           | Cool  |
+			    | ------------- |:-------------:| -----:|
+			    | col 3 is      | right-aligned | $1600 |
+			    | col 2 is      | centered      |   $12 |
+			    | zebra stripes | are neat      |    $1 | </p>
+		  </div>
 			<!-- Section Header End -->
-
-			<div class="clean-contact-details">
-
-				<!-- Contact Form -->
-				<div class="col-md-12 col-sm-12 col-xs-12 clean-contact-form wow bounceInRight">
-					<div id="contact-result"></div>
-					<div id="contact-form">
-						<div class="clean-input-name clean-input-fields">
-							<label for="name">Name*</label>
-							<input type="text" name="name" id="name" required>
-						</div>
-
-						<div class="clean-input-email clean-input-fields">
-							<label for="email">Email*</label>
-							<input type="email" name="email" id="email" required>
-						</div>
-
-						<div class="clean-input-message clean-input-fields">
-							<label for="message">Message</label>
-							<textarea name="message" id="message" cols="30" rows="10"></textarea>
-						</div>
-
-						<input type="submit" value="SEND MESSAGE" id="submit-btn">
-					</div>
-				</div>
-				<!-- Contact Form End -->
-
-			</div>
 		</div>
 	</div>
 </section>
