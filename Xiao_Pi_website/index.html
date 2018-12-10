@@ -439,7 +439,7 @@
 				</ol>
 				</p>
 			
-				<br />i
+				<br />
 
 				<h3>2.Prediction Algorithm: </h3>
 				<p>When balloon quickly moved and get rid of the range that the camera can video, the servo of camera will not know how to move and it will be stuck. To solve this problem, we create the prediction algorithm. Prediction Algorithm is to make the servo move at the speed that is slower than the original speed but the same direction. “Original speed” is the speed of car before the balloon disappears. This is reasonable because the balloon is falling and we assume there is no wind to affect the balloon’s motion. </p>
@@ -642,7 +642,9 @@
 			<div class="col-md-12 col-sm-12 col-xs-12 clean-section-header wow fadeInDown">
 			  <h1><font color="#7cd552">Conclusion</font></h1>
 			  <div class="clean-line"></div>
-				<p class="col-md-8 col-sm-10 col-xs-12 col-md-offset-2 col-sm-offset-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae dolorem nostrum pariatur consequatur aut est aspernatur reiciendis veniam delectus saepe.</p>
+				<p class="col-md-8 col-sm-10 col-xs-12 col-md-offset-2 col-sm-offset-1">Our robot achieved the objective to terminate the balloon before it lands. Also, we realized that if it wasn’t balloon, the ball would only spend two seconds before it lands. On the other hand, if the ball is changed to a balloon, the air resistance would slow down the dropping balloon. </p>
+				<p class="col-md-8 col-sm-10 col-xs-12 col-md-offset-2 col-sm-offset-1">
+				Nevertheless, if the robot is equipped with two cameras, it would take more computing time and would eventually slow down the tracking efficiency. Take our project as an example, our tracking function need 10 milliseconds to compute the object contour and 2 milliseconds to compute the control output. The new input image is renewed with every 30 milliseconds (30fps). If it were two cameras input the images, the contour calculating function would be doubled up. Thus, the output time from fetching an image and output a control signal could take more than 25 milliseconds in idea way. Moreover, we weren’t using higher priority from CPU, there would definitely be more latency when executing the program. </p>
 			</div>
 			<!-- Section Header End -->
 		</div>
@@ -690,163 +692,90 @@
 <div class="clean-parallax-overlay"></div>
 	<div class="container">
 		<div class="row">
-
+			
+			
 			<!-- Section Header -->
-			<div class="col-md-12 col-sm-12 col-xs-12 clean-section-header wow fadeInDown clean-section-header-parallax">
+			<div class="col-md-12 col-sm-12 col-xs-12 clean-section-header wow fadeInDown">
 				<h1><span class="clean-color-contras">Appendix</span></h1>
 				<h2><span class="clean-color-contras"><em>1. Budget</em></span></h2>
+			
+				
+			  <center>
 				<p class="col-md-8 col-sm-10 col-xs-12 col-md-offset-2 col-sm-offset-1">
-	
 				
-				<table>
-				  <thead>
-					<tr>
-					  <th>Item</th>
-					  <th>Unit Cost</th>
-					  <th>Quantity</th>
-					  <th>Total Cost</th>
-					</tr>
-				  </thead>
-				  <tbody>
-					<tr>
-					  <td>Line Sensors</td>
-					  <td>$3</td>
-					  <td>2</td>
-					  <td>$6</td>
-					</tr>
-					<tr>
-					  <td>Wall Sensors</td>
-					  <td>$7</td>
-					  <td>3</td>
-					  <td>$21</td>
-					</tr>
-					<tr>
-					  <td>Camera</td>
-					  <td>$14</td>
-					  <td>1</td>
-					  <td>$14</td>
-					</tr>
-					<tr>
-					  <td>Parallax Servos</td>
-					  <td>$13</td>
-					  <td>2</td>
-					  <td>$26</td>
-					</tr>
-					<tr>
-					  <td>Arduino Uno</td>
-					  <td>$16</td>
-					  <td>1</td>
-					  <td>$16</td>
-					</tr>
-					<tr>
-					  <td>Roller Ball Bearing</td>
-					  <td>$3</td>
-					  <td>1</td>
-					  <td>$3</td>
-					</tr>
-					<tr>
-					  <td>LED Strip</td>
-					  <td>$2</td>
-					  <td>1</td>
-					  <td>$2</td>
-					</tr>
-					<tr>
-					  <td>Protoboard</td>
-					  <td>$3</td>
-					  <td>2</td>
-					  <td>$6</td>
-					</tr>
-					<tr>
-					  <td>LM 358 Op Amp</td>
-					  <td>$0.16</td>
-					  <td>2</td>
-					  <td>$0.32</td>
-					</tr>
-					<tr>
-					  <td>Multiplexer</td>
-					  <td>$0.26</td>
-					  <td>1</td>
-					  <td>$0.26</td>
-					</tr>
-					<tr>
-					  <td>Phototransistor</td>
-					  <td>$1</td>
-					  <td>1</td>
-					  <td>$1</td>
-					</tr>
-					<tr>
-					  <td>Electret Microphone</td>
-					  <td>$1</td>
-					  <td>1</td>
-					  <td>$1</td>
-					</tr>
-					<tr>
-					  <td>NRF24L01+ Radio</td>
-					  <td>$3</td>
-					  <td>1</td>
-					  <td>$3</td>
-					</tr>
-					<tr>
-					  <td> </td>
-					  <td> </td>
-					  <td> </td>
-					  <td>$99.58</td>
-					</tr>
-				  </tbody>
-				</table>
-				
+					<table>
+					  <thead>
+						<tr>
+						  <th>Item</th>
+						  <th>Unit Cost  </th>
+						  <th>Quantity</th>
+						  <th>Total Cost</th>
+						</tr>
+					  </thead>
+					  <tbody>
+						<tr>
+						  <td>Raspberry Pi Camera </td>
+						  <td>$29.95</td>
+						  <td>1</td>
+						  <td>$29.95</td>
+						</tr>
+						<tr>
+						  <td>DC Motors(From Prof. Skovira) </td>
+						  <td>$2.95</td>
+						  <td>2</td>
+						  <td>$5.9</td>
+						</tr>
+						<tr>
+						  <td>Tilt Kit and Servos</td>
+						  <td>$8.89</td>
+						  <td>1</td>
+						  <td>$8.89</td>
+						</tr>
+						<tr>
+						  <td>DC Motor Controller</td>
+						  <td>$29.95</td>
+						  <td>1</td>
+						  <td>$29.95</td>
+						</tr>
+						<tr>
+						  <td>Balloon </td>
+						  <td>$2.94</td>
+						  <td>1</td>
+						  <td>$2.94</td>
+						</tr>
+						<tr>
+						  <td>Safe Pin</td>
+						  <td>$1.98</td>
+						  <td>1</td>
+						  <td>$1.98</td>
+						</tr>
+						<tr>
+						  <td>3D Printer</td>
+						  <td>Free</td>
+						  <td>n</td>
+						  <td>Free</td>
+						</tr>
+						<tr>
+						  <td> Total </td>
+						  <td> </td>
+						  <td> </td>
+						  <td>$79.61</td>
+						</tr>
+					  </tbody>
+					</table>	
+					
 				</p>
-		  </div>
-			<div class="col-md-12 col-sm-12 col-xs-12 clean-section-header wow fadeInDown clean-section-header-parallax">
-			  <h1><span class="clean-color-contras">Appendix</span></h1>
-			  <h2><span class="clean-color-contras"><em>1. Budget</em></span></h2>
-			  <p class="col-md-8 col-sm-10 col-xs-12 col-md-offset-2 col-sm-offset-1"> | Tables        | Are           | Cool  |
-			    | ------------- |:-------------:| -----:|
-			    | col 3 is      | right-aligned | $1600 |
-			    | col 2 is      | centered      |   $12 |
-			    | zebra stripes | are neat      |    $1 | </p>
-		  </div>
+				</center>
+				
+				
+			</div>
 			<!-- Section Header End -->
+
+			
 		</div>
 	</div>
 </section>
 
-
-<!-- ===================================
-	FOOTER SECTION
-==================================== -->
-<footer class="background-two">
-	<div class="container">
-		<div class="row">
-			<div class="clean-footer-content">
-
-				<div class="clean-footer-logo wow bounceIn" data-wow-offset="0">
-					<a href="index.html">
-						<img id="logo-footer" src="images/logo.png" alt="clean">
-					</a>
-				</div>
-
-				<p class="clean-copyright-info">Copyright &copy; 2017.Company name All rights reserved.More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></p>
-
-				<ul class="clean-footer-social-info">
-					<li>
-						<a href=""><i class="fa fa-facebook"></i></a>
-					</li>
-					<li>
-						<a href=""><i class="fa fa-twitter"></i></a>
-					</li>
-					<li>
-						<a href=""><i class="fa fa-google-plus"></i></a>
-					</li>
-					<li>
-						<a href=""><i class="fa fa-linkedin"></i></a>
-					</li>
-				</ul>
-
-			</div>
-		</div>
-	</div>
-</footer>
 
 <!-- ===================================
 	SCRIPTS
